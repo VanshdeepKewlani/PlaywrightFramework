@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" name="PlaywrightFramework.dll" fullname="D:\Playwright\PlaywrightFramework\bin\Debug\net8.0\PlaywrightFramework.dll" testcasecount="3" result="Failed" start-time="2024-11-21T11:53:14.9836878Z" end-time="2024-11-21T11:55:50.1090439Z" duration="155.125334" total="3" passed="2" failed="1" inconclusive="0" skipped="0" warnings="0" asserts="2" random-seed="719041140">
+  <command-line><![CDATA[D:\Playwright\PlaywrightFramework\bin\Debug\net8.0\PlaywrightFramework.dll]]></command-line>
+  <filter />
+  <test-suite type="Assembly" id="1007" name="PlaywrightFramework.dll" fullname="D:\Playwright\PlaywrightFramework\bin\Debug\net8.0\PlaywrightFramework.dll" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-11-21T11:53:14.9836878Z" end-time="2024-11-21T11:55:50.1090439Z" duration="155.125334" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="2">
+    <environment framework-version="4.2.2.0" clr-version="8.0.10" os-version="Microsoft Windows 10.0.22621" platform="Win32NT" cwd="D:\Playwright\PlaywrightFramework" machine-name="INHL1273" user="VanshdeepK" user-domain="INTERRAIT" culture="en-IN" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="WorkDirectory" value="D:\Playwright\PlaywrightFramework" />
+      <setting name="NumberOfTestWorkers" value="8" />
+    </settings>
+    <properties>
+      <property name="_PID" value="62752" />
+      <property name="_APPDOMAIN" value="PlaywrightFramework" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="SetUpFixture" id="1000" name="[default namespace]" fullname="Setup" classname="Setup" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-11-21T11:53:14.9894324Z" end-time="2024-11-21T11:55:50.1089653Z" duration="155.119533" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="2">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1008" name="PlaywrightFramework" fullname="PlaywrightFramework" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-11-21T11:53:15.3305162Z" end-time="2024-11-21T11:55:43.1840516Z" duration="147.853535" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="2">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1009" name="Tests" fullname="PlaywrightFramework.Tests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2024-11-21T11:53:15.3305595Z" end-time="2024-11-21T11:55:43.1840439Z" duration="147.853484" total="3" passed="2" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="2">
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1001" name="AddTeamMemberTests" fullname="PlaywrightFramework.Tests.AddTeamMemberTests" classname="PlaywrightFramework.Tests.AddTeamMemberTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-11-21T11:53:15.3305925Z" end-time="2024-11-21T11:54:07.8428672Z" duration="52.512280" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+            <test-case id="1002" name="AddTeamMemberTest" fullname="PlaywrightFramework.Tests.AddTeamMemberTests.AddTeamMemberTest" methodname="AddTeamMemberTest" classname="PlaywrightFramework.Tests.AddTeamMemberTests" runstate="Runnable" seed="2131003783" result="Passed" start-time="2024-11-21T11:53:15.3307061Z" end-time="2024-11-21T11:54:07.8371321Z" duration="52.506532" asserts="1">
+              <properties>
+                <property name="Category" value="Extent" />
+              </properties>
+              <output><![CDATA[The page contains 'Team Members'
+Search count in GetCountOfSearchResults function is 1
+Search count in CountOfSearchResults function is 1
+FirstName: Kristian, LastName: Greenholt, Email: Lisette_Lebsack@hotmail.com, Phone: 466.722.1980 x1805, Username: Addie69, Password: Test!ng123456
+FirstName: Kristian
+Search count in GetCountOfSearchResults function is 11
+Search count in CountOfSearchResults function is 11
+]]></output>
+              <attachments>
+                <attachment>
+                  <filePath>D:\Playwright\PlaywrightFramework\images\TestExecLog_20241121172407.png</filePath>
+                </attachment>
+              </attachments>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1003" name="DeleteTeamMemberTests" fullname="PlaywrightFramework.Tests.DeleteTeamMemberTests" classname="PlaywrightFramework.Tests.DeleteTeamMemberTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2024-11-21T11:54:07.8483688Z" end-time="2024-11-21T11:55:17.3571498Z" duration="69.508780" total="1" passed="0" failed="1" warnings="0" inconclusive="0" skipped="0" asserts="0">
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1004" name="DeleteTeamMemberTest" fullname="PlaywrightFramework.Tests.DeleteTeamMemberTests.DeleteTeamMemberTest" methodname="DeleteTeamMemberTest" classname="PlaywrightFramework.Tests.DeleteTeamMemberTests" runstate="Runnable" seed="1660848460" result="Failed" start-time="2024-11-21T11:54:07.8488785Z" end-time="2024-11-21T11:55:17.3568847Z" duration="69.508006" asserts="0">
+              <failure>
+                <message><![CDATA[The team member  is not deleted after performing delete operation]]></message>
+                <stack-trace><![CDATA[   at PlaywrightFramework.Pages.SearchTeamMemberPage.SearchingTeamMemberAfterDelete(String fname) in D:\Playwright\PlaywrightFramework\Pages\SearchTeamMemberPage.cs:line 68
+   at PlaywrightFramework.Tests.DeleteTeamMemberTests.DeleteTeamMemberTest() in D:\Playwright\PlaywrightFramework\Tests\DeleteTeamMemberTests.cs:line 117
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[Setup done
+The page contains 'Team Members'
+FirstName: Kristian
+Search count in GetCountOfSearchResults function is 2
+Search count in CountOfSearchResults function is 2
+The page contains 'Edit Team Member' as heading.
+]]></output>
+              <assertions>
+                <assertion result="Failed">
+                  <message><![CDATA[The team member  is not deleted after performing delete operation]]></message>
+                  <stack-trace><![CDATA[   at PlaywrightFramework.Pages.SearchTeamMemberPage.SearchingTeamMemberAfterDelete(String fname) in D:\Playwright\PlaywrightFramework\Pages\SearchTeamMemberPage.cs:line 64
+]]></stack-trace>
+                </assertion>
+              </assertions>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1005" name="EditTeamMemberTests" fullname="PlaywrightFramework.Tests.EditTeamMemberTests" classname="PlaywrightFramework.Tests.EditTeamMemberTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-11-21T11:55:17.3572008Z" end-time="2024-11-21T11:55:43.1840276Z" duration="25.826827" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+            <test-case id="1006" name="EditTeamMemberTest" fullname="PlaywrightFramework.Tests.EditTeamMemberTests.EditTeamMemberTest" methodname="EditTeamMemberTest" classname="PlaywrightFramework.Tests.EditTeamMemberTests" runstate="Runnable" seed="1802591066" result="Passed" start-time="2024-11-21T11:55:17.3573514Z" end-time="2024-11-21T11:55:43.1839578Z" duration="25.826608" asserts="1">
+              <output><![CDATA[Setup done
+The page contains 'Team Members'
+FirstName: Kristian
+FirstName before editing is Kristian
+The page contains 'Edit Team Member' as heading.
+FirstName after editing is Blaise
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
