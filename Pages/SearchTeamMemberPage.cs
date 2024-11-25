@@ -13,13 +13,52 @@ namespace PlaywrightFramework.Pages
         private ILocator _editLinks => _page.Locator("a:has-text('Edit')");
         private string fname = "";
 
-        public async Task<string> SearchingTeamMemberByFirstName(){
+        public async Task<string> SearchingTeamMemberByFirstName()
+        {
             var faker = new Faker();
             fname = faker.Name.FirstName();
             await _searchInput.FillAsync(fname);
             await _page.WaitForLoadStateAsync(LoadState.NetworkIdle);
             return fname;
         }
+
+
+        public async Task<string> SearchingTeamMember(string searchString)
+        {
+            //Define the CSV file path
+            var csvFilePath = "users.csv";
+            // Read from CSV
+            var readUsers = CsvHelperExample.ReadFromCSV(csvFilePath);
+
+            string searchCriteria = "";
+
+            switch (searchString)
+            {
+                case "firstName":
+                    foreach (var user in readUsers)
+                    {
+                        searchCriteria = user.FirstName;
+                        Console.WriteLine($"FirstName: {searchCriteria}");
+                        break;
+                    }
+                    break;
+
+                case "email":
+                    foreach (var user in readUsers)
+                    {
+                        searchCriteria = user.Email;
+                        Console.WriteLine($"Email: {searchCriteria}");
+                        break;
+                    }
+                    break;
+            }
+
+            await _searchInput.FillAsync(searchCriteria);
+            await _page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+
+            return searchCriteria;
+        }
+
 
         public async Task<string> SearchingTeamMember()
         {
@@ -44,9 +83,9 @@ namespace PlaywrightFramework.Pages
             return name;
         }
 
-        public async Task SearchingTeamMemberAfterEdit(string fname)
+        public async Task SearchingTeamMemberAfterEdit(string searchCriteria)
         {
-            await _searchInput.FillAsync(fname);
+            await _searchInput.FillAsync(searchCriteria);
             await _page.WaitForLoadStateAsync(LoadState.NetworkIdle);
             // Wait for the table to have two rows, one for header and one for body
             await _page.WaitForFunctionAsync("() => document.querySelector('table') && document.querySelector('table').rows.length === 2");
@@ -62,13 +101,13 @@ namespace PlaywrightFramework.Pages
             {
                 await _page.WaitForFunctionAsync("() => document.querySelector('table') && document.querySelector('table').rows.length === 1");
             }
-            catch (System.TimeoutException e)
+            catch (System.TimeoutException)
             {
                 Assert.Fail("The team member " + fname + " is not deleted after performing delete operation");
             }
         }
 
-        public async Task EditTeamMember()
+        public async Task ClickOnEditTeamMember()
         {
             var firstEditLink = _editLinks.First;
             // Optionally wait for the link to be visible

@@ -1,6 +1,7 @@
 using Microsoft.Playwright;
 using NUnit.Framework;
 using Bogus;
+using System.ComponentModel.DataAnnotations;
 
 namespace PlaywrightFramework.Pages
 {
@@ -8,6 +9,7 @@ namespace PlaywrightFramework.Pages
     {
         private readonly IPage _page;
         private string firstName = "";
+        private string email = "";
 
         public EditTeamMemberPage(IPage page) => _page = page;
         private ILocator _header => _page.Locator("h1");
@@ -117,6 +119,8 @@ namespace PlaywrightFramework.Pages
         }
 
         public string GetFirstName() => firstName;
+
+        public string GetEmail() => email;
 
         public async Task DeleteMember()
         {
