@@ -8,19 +8,20 @@ using Playwright_PageTest001;
 namespace PlaywrightFramework.Tests
 {
     [TestFixture]
+    // public class AddTeamMemberTests : BaseTest
     public class AddTeamMemberTests
     {
 
-        private readonly AddTeamMemberPage _addTeamMemberPage;
+        // private readonly AddTeamMemberPage _addTeamMemberPage;
         private IPage _page;
         private IPlaywright _playwright;
         private IBrowser _browser;
         private int searchCount = 0;
 
-        public AddTeamMemberTests()
-        {
-            // Setup code here (e.g., initializing objects or dependencies)
-        }
+        // public AddTeamMemberTests()
+        // {
+        //     // Setup code here (e.g., initializing objects or dependencies)
+        // }
 
 
         [SetUp]
@@ -38,11 +39,15 @@ namespace PlaywrightFramework.Tests
             await _page.CloseAsync();
         }
 
-        public AddTeamMemberTests(AddTeamMemberPage page)
-        {
-            _addTeamMemberPage = page;
-        }
+        // public AddTeamMemberTests(AddTeamMemberPage page)
+        // {
+        //     _addTeamMemberPage = page;
+        // }
 
+        // public AddTeamMemberTests(IPage page)
+        // {
+        //     _page = page;
+        // }
 
         [Test]
         [Category("Extent")]
@@ -58,7 +63,7 @@ namespace PlaywrightFramework.Tests
             // Set a custom timeout for click
             var clickOptions = new PageClickOptions
             {
-                Timeout = 60000 // 60 seconds for navigation timeout
+                Timeout = 60000 // 60 seconds for click timeout
             };
 
             var pageFactory = new PageFactory(_page);
@@ -67,7 +72,7 @@ namespace PlaywrightFramework.Tests
 
             await loginPage.GoToAsync(navigationOptions);
 
-            await loginPage.LoginAsync("kavithasub", "Welcome123");
+            await loginPage.LoginAsync();
 
             var mainMenuPage = pageFactory.GetMainMenuPage();
 
@@ -95,7 +100,7 @@ namespace PlaywrightFramework.Tests
 
             await searchTeamMemberPage.GetCountOfSearchResults();
 
-            Assert.That(searchCount != (searchTeamMemberPage.CountOfSearchResults()));
+            Assert.That(searchCount != searchTeamMemberPage.CountOfSearchResults());
 
             await ExtentReport.TakeScreenshot(_page, "New Team member added successfully");
         }

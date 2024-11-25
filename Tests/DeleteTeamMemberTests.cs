@@ -9,6 +9,7 @@ using Playwright_PageTest001;
 namespace PlaywrightFramework.Tests
 {
     [TestFixture]
+    // public class DeleteTeamMemberTests : BaseTest
     public class DeleteTeamMemberTests
     {
         protected SearchTeamMemberPage _searchPage;
@@ -46,15 +47,15 @@ namespace PlaywrightFramework.Tests
             _editPage = editPage;
         }
 
-        public class SearchData
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Email { get; set; }
-            public string CellPhone { get; set; }
-            public string Username { get; set; }
-            public string Password { get; set; }
-        }
+        // public class SearchData
+        // {
+        //     public string FirstName { get; set; }
+        //     public string LastName { get; set; }
+        //     public string Email { get; set; }
+        //     public string CellPhone { get; set; }
+        //     public string Username { get; set; }
+        //     public string Password { get; set; }
+        // }
 
         [Test]
         [Category("Extent")]
@@ -79,7 +80,7 @@ namespace PlaywrightFramework.Tests
 
             await loginPage.GoToAsync(navigationOptions);
 
-            await loginPage.LoginAsync("kavithasub", "Welcome123");
+            await loginPage.LoginAsync();
 
             var mainMenuPage = pageFactory.GetMainMenuPage();
 
@@ -93,19 +94,19 @@ namespace PlaywrightFramework.Tests
 
             var searchTeamMemberPage = pageFactory.GetTeamMemberPage();
 
-            await searchTeamMemberPage.SearchingTeamMember();
+            string fname = await searchTeamMemberPage.SearchingTeamMember();
 
             await searchTeamMemberPage.GetCountOfSearchResults();
 
             searchCount = searchTeamMemberPage.CountOfSearchResults();
 
-            await searchTeamMemberPage.EditTeamMember();
+            await searchTeamMemberPage.ClickOnEditTeamMember();
 
             var editTeamMemberPage = pageFactory.GetEditTeamMemberPage();
 
             await editTeamMemberPage.VerifyTeamMemberHeading();
 
-            string fname = editTeamMemberPage.GetFirstName();
+            // string fname = editTeamMemberPage.GetFirstName();
 
             await editTeamMemberPage.DeleteMember();
 
@@ -115,7 +116,7 @@ namespace PlaywrightFramework.Tests
 
             Assert.That(searchCount > searchTeamMemberPage.CountOfSearchResults());
 
-            await ExtentReport.TakeScreenshot(_page, "New Team member added successfully");
+            await ExtentReport.TakeScreenshot(_page, "Team member deleted successfully");
 
         }
     }

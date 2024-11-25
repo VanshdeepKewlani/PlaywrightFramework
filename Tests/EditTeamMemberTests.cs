@@ -41,18 +41,18 @@ namespace PlaywrightFramework.Tests
             _editPage = editPage;
         }
 
-        public class SearchData
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Email { get; set; }
-            public string CellPhone { get; set; }
-            public string Username { get; set; }
-            public string Password { get; set; }
-        }
+        // public class SearchData
+        // {
+        //     public string FirstName { get; set; }
+        //     public string LastName { get; set; }
+        //     public string Email { get; set; }
+        //     public string CellPhone { get; set; }
+        //     public string Username { get; set; }
+        //     public string Password { get; set; }
+        // }
 
         [Test]
-        [Category("Extent")]        
+        [Category("Extent")]     
         public async Task EditTeamMemberTest()
         {
          ExtentReport.exChildTest = ExtentReport.exParentTest.CreateNode("Edit a team member");
@@ -74,7 +74,7 @@ namespace PlaywrightFramework.Tests
 
             await loginPage.GoToAsync(navigationOptions);
 
-            await loginPage.LoginAsync("kavithasub", "Welcome123");
+            await loginPage.LoginAsync();
 
             var mainMenuPage = pageFactory.GetMainMenuPage();
 
@@ -88,11 +88,11 @@ namespace PlaywrightFramework.Tests
 
             var searchTeamMemberPage = pageFactory.GetTeamMemberPage();
 
-            string firstName = await searchTeamMemberPage.SearchingTeamMember();
+            string firstName = await searchTeamMemberPage.SearchingTeamMember("firstName");
 
-            Console.WriteLine("FirstName before editing is " + firstName);
+            Console.WriteLine("FirstName before editing is " + firstName);         
 
-            await searchTeamMemberPage.EditTeamMember();
+            await searchTeamMemberPage.ClickOnEditTeamMember();
 
             var editTeamMemberPage = pageFactory.GetEditTeamMemberPage();
 
@@ -110,7 +110,7 @@ namespace PlaywrightFramework.Tests
 
             Assert.That(firstName != fname);
 
-            await ExtentReport.TakeScreenshot(_page, "A Team member updated successfully");
+            await ExtentReport.TakeScreenshot(_page, "A Team member updated successfully");          
 
         }
     }
