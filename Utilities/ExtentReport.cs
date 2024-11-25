@@ -12,14 +12,13 @@ namespace Playwright_PageTest001
         public static ExtentTest exParentTest;
         public static ExtentTest exChildTest;
         public static string dirpath;
-
         public static string pathWithFileNameExtension;
-        private readonly IPage _page;
+        //private readonly IPage _page;
 
         public static void LogReport(string testcase)
         {
             extentReports = new ExtentReports();
-            dirpath = @"D:\Playwright\PlaywrightFramework\" + testcase + ".html";
+            dirpath = @"D:\Playwright\PlaywrightFramework\Reports\" + testcase + DateTime.Now.ToString("yyyyMMddHHmmss") + ".html";
             ExtentSparkReporter spark = new ExtentSparkReporter(dirpath);          
             spark.Config.Theme = Theme.Standard;
             extentReports.AttachReporter(spark);
