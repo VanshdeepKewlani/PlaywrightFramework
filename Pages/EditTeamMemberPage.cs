@@ -1,7 +1,6 @@
 using Microsoft.Playwright;
 using NUnit.Framework;
 using Bogus;
-using System.ComponentModel.DataAnnotations;
 
 namespace PlaywrightFramework.Pages
 {
@@ -64,7 +63,7 @@ namespace PlaywrightFramework.Pages
             new() {FirstName = firstName, Email = email, Phone = cellPhone, Username = username}
             };
 
-            //await EditAssignRole();
+            // await EditAssignRole();
             await EditFirstName(firstName);
             await EditEmail(email);
             await EditPhone(cellPhone);

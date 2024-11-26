@@ -9,7 +9,6 @@ using Playwright_PageTest001;
 namespace PlaywrightFramework.Tests
 {
     [TestFixture]
-    // public class DeleteTeamMemberTests : BaseTest
     public class DeleteTeamMemberTests
     {
         protected SearchTeamMemberPage _searchPage;
@@ -18,11 +17,6 @@ namespace PlaywrightFramework.Tests
         private IBrowser _browser;
         private IPage _page;
         private int searchCount = 0;
-
-        public DeleteTeamMemberTests()
-        {
-
-        }
 
         [SetUp]
         public async Task Setup()
@@ -39,23 +33,16 @@ namespace PlaywrightFramework.Tests
             await _page.CloseAsync();
         }
 
-
+        public DeleteTeamMemberTests()
+        {
+            
+        }
 
         public DeleteTeamMemberTests(SearchTeamMemberPage searchPage, EditTeamMemberPage editPage)
         {
             _searchPage = searchPage;
             _editPage = editPage;
         }
-
-        // public class SearchData
-        // {
-        //     public string FirstName { get; set; }
-        //     public string LastName { get; set; }
-        //     public string Email { get; set; }
-        //     public string CellPhone { get; set; }
-        //     public string Username { get; set; }
-        //     public string Password { get; set; }
-        // }
 
         [Test]
         [Category("Extent")]
@@ -106,7 +93,6 @@ namespace PlaywrightFramework.Tests
 
             await editTeamMemberPage.VerifyTeamMemberHeading();
 
-            // string fname = editTeamMemberPage.GetFirstName();
 
             await editTeamMemberPage.DeleteMember();
 

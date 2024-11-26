@@ -32,7 +32,7 @@ namespace PlaywrightFramework.Tests
 
         public EditTeamMemberTests()
         {
-
+            
         }
 
         public EditTeamMemberTests(SearchTeamMemberPage searchPage, EditTeamMemberPage editPage)
@@ -40,16 +40,6 @@ namespace PlaywrightFramework.Tests
             _searchPage = searchPage;
             _editPage = editPage;
         }
-
-        // public class SearchData
-        // {
-        //     public string FirstName { get; set; }
-        //     public string LastName { get; set; }
-        //     public string Email { get; set; }
-        //     public string CellPhone { get; set; }
-        //     public string Username { get; set; }
-        //     public string Password { get; set; }
-        // }
 
         [Test]
         [Category("Extent")]     

@@ -23,7 +23,6 @@ namespace PlaywrightFramework.Pages
             await _page.WaitForLoadStateAsync(LoadState.NetworkIdle);
             await _page.WaitForLoadStateAsync(LoadState.Load);
             await _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
-            //await Task.Delay(70000); // Wait for 70 seconds
 
             try
             {

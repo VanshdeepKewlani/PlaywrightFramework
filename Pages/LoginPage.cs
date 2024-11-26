@@ -17,7 +17,6 @@ namespace PlaywrightFramework.Pages
 
         public async Task GoToAsync(PageGotoOptions pgo)
         {
-            // await _page.GotoAsync("https://rta-edu-stg-web-03.azurewebsites.net/core", pgo);
             await _page.GotoAsync(ConfigurationManager.GetBaseUrl(), pgo);
         }
 
@@ -30,11 +29,8 @@ namespace PlaywrightFramework.Pages
             var creds = ConfigurationManager.GetLoginCreds();
             string username = creds.Username;
             string password = creds.Password;
-
-            // await _signInName.FillAsync("kavithasub");
             await _signInName.FillAsync(username);
             await _password.FocusAsync();
-            // await _password.FillAsync("Welcome123");
             await _password.FillAsync(password);
             await _signIn.ClickAsync();
         }

@@ -8,7 +8,6 @@ using Playwright_PageTest001;
 namespace PlaywrightFramework.Tests
 {
     [TestFixture]
-    // public class AddTeamMemberTests : BaseTest
     public class AddTeamMemberTests
     {
 
@@ -18,11 +17,10 @@ namespace PlaywrightFramework.Tests
         private IBrowser _browser;
         private int searchCount = 0;
 
-        // public AddTeamMemberTests()
-        // {
-        //     // Setup code here (e.g., initializing objects or dependencies)
-        // }
-
+        public AddTeamMemberTests()
+        {
+            
+        }
 
         [SetUp]
         public async Task Setup()
@@ -39,15 +37,6 @@ namespace PlaywrightFramework.Tests
             await _page.CloseAsync();
         }
 
-        // public AddTeamMemberTests(AddTeamMemberPage page)
-        // {
-        //     _addTeamMemberPage = page;
-        // }
-
-        // public AddTeamMemberTests(IPage page)
-        // {
-        //     _page = page;
-        // }
 
         [Test]
         [Category("Extent")]

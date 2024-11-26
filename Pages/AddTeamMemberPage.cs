@@ -15,8 +15,6 @@ namespace PlaywrightFramework.Pages
         private ILocator _userName => _page.Locator("#username");
         private ILocator _password => _page.Locator("#password");
         private ILocator _confirmPassword => _page.Locator("#confirmPassword");
-        private ILocator _saveButton => _page.Locator("button");
-
 
         public async Task Add_Team_Member(string fname)
         {
@@ -68,34 +66,6 @@ namespace PlaywrightFramework.Pages
 
         }
 
-        public async Task AddNewTeamMember(string firstname, string lastname, string email, string phone, string username, string password)
-        {
-            await _page.FillAsync("#firstName", firstname);
-            await _page.FillAsync("#lastName", lastname);
-            await _page.FillAsync("#email", email);
-            await _page.FillAsync("#phone", phone);
-            await _page.FillAsync("#username", username);
-            await _page.FillAsync("#password", password);
-            await _page.FillAsync("#confirmPassword", password);
-
-            // Locate the button by its text
-            var buttonLocator = _page.Locator("button").GetByText(" Save and Close ");
-            // Wait for the button to be visible
-            await buttonLocator.WaitForAsync();
-            // Click the button
-            await buttonLocator.ClickAsync();
-
-            // Define the CSV file path
-            var csvFilePath = "users.csv";
-
-            var users = new List<User>
-            {
-                new User{FirstName = firstname, LastName = lastname, Email = email, Phone = phone, Username = username, Password = password}
-            };
-
-            // Write to CSV
-            CsvHelperExample.WriteToCSV(csvFilePath, users);
-            
-        }
+       
     }
 }
